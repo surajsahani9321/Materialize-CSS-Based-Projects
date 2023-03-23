@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wall Clock</title>
+  <!-- Import Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    /* Custom styles */
+    body {
+      background-color: #3c2f2f; /* Dark brown */
+      color: #8bc34a; /* Light green */
+    }
+    
+    #clock {
+      font-size: 6em;
+      margin-top: 100px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col s12">
+        <h1 class="center-align">Digital Clock</h1>
+      </div>
+    </div>
+    <div class="col s12">
+        <h1 class="center-align">Created By Suraj Sahani</h1>
+      </div>
+    <div class="row">
+      <div class="col s12 m6 offset-m3">
+        <div id="clock"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Import jQuery and Materialize JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      function updateTime() {
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+
+        // Add leading zero if less than 10
+        hours = hours < 10 ? "0" + hours : hours;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        // Display time
+        $('#clock').html(hours + ":" + minutes + ":" + seconds);
+      }
+
+      setInterval(updateTime, 1000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calendar</title>
+        <style>
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                margin: 0 auto;
+                max-width: 800px;
+                padding: 20px;
+                background-color: #201f1f;
+                border-radius: 10px;
+            }
+
+            .month {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                margin: 10px;
+                background-color: #ffffff;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+                border-radius: 10px;
+            }
+
+            .month-name {
+                font-size: 24px;
+                font-weight: bold;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .weekdays {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+
+            .weekdays div {
+                flex-basis: calc(100% / 7);
+                text-align: center;
+                padding: 5px;
+                border-radius: 10px;
+                background-color: #d3d3d3;
+            }
+
+            .day {
+                flex-basis: calc(100%);
+                padding: 5px;
+                text-align: center;
+                font-size: 18px;
+                font-weight: bold;
+                color: #333333;
+                border-radius: 10px;
+                margin-bottom: 5px;
+                background-color: #ffffff;
+            }
+
+            .day.today {
+                background-color: #69b3a2;
+                color: #ffffff;
+            }
+
+            .day.other-month {
+                color: #d3d3d3;
+            }
+
+            @media screen and (max-width: 480px) {
+                .month {
+                    padding: 10px;
+                    margin: 5px;
+                }
+
+                .month-name {
+                    font-size: 20px;
+                }
+
+                .weekdays div {
+                    font-size: 12px;
+                    padding: 3px;
+                }
+
+                .day {
+                    font-size: 14px;
+                    padding: 3px;
+                }
+            }
+
+           
+
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color:black;
+            }
+
+            #calendar {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #calendar-header {
+                font-family: 'Roboto', sans-serif;
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+                margin-bottom: 20px;
+            }
+
+            #calendar-body {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            .day {
+                width: 14.28%;
+                height: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Roboto', sans-serif;
+                font-size: 18px;
+                color: #333;
+            }
+
+            .day:hover {
+                background-color: #eee;
+            }
+
+            .today {
+                background-color: #009688;
+                color: #fff;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="month">
+                <div class="month-name">January</div>
+                <div class="row">
+                    <div class="col s12">
+                        <table class="centered">
+                            <thead>
+                                <tr>
+                                    <th>Sun</th>
+                                    <th>Mon</th>
+                                    <th>Tue</th>
+                                    <th>Wed</th>
+                                    <th>Thu</th>
+                                    <th>Fri</th>
+                                    <th>Sat</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="day">28</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">29</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">30</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">31</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">1</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">2</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">3</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="day">4</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">5</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">6</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">7</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">8</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">9</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">10</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="day">11</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">12</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">13</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">14</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">15</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">16</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">17</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="day">18</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">19</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">20</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">21</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">22</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">23</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">24</div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="day">25</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">26</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">27</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">28</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">29</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">30</div>
+                                    </td>
+                                    <td>
+                                        <div class="day">31</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
